@@ -1,11 +1,8 @@
 import React from "react";
 
 const ContactUs = () => {
-<<<<<<< HEAD
-  return <div className="w-full h-screen">ContactUs</div>;
-=======
-  return <div>ContactUs</div>;
-  <div className="px-4 md:px-20 py-10 bg-white text-black">
+  return (
+    <div className="px-4 md:px-20 py-10 bg-white text-black">
       {/* Breadcrumb */}
       <p className="text-sm text-gray-500 mb-4">Home / Contact</p>
 
@@ -17,12 +14,12 @@ const ContactUs = () => {
         <div className="bg-gray-50 border p-6 rounded-md space-y-6">
           <div>
             <div className="flex items-center space-x-3 mb-2">
-              <div className="bg-red-500 p-2 rounded-full text-white">
-                📞
-              </div>
+              <div className="bg-red-500 p-2 rounded-full text-white">📞</div>
               <h4 className="font-semibold text-lg">Call To Us</h4>
             </div>
-            <p className="text-gray-700">We are available 24/7, 7 days a week.</p>
+            <p className="text-gray-700">
+              We are available 24/7, 7 days a week.
+            </p>
             <p className="font-medium mt-1">Phone: +880611122222</p>
           </div>
 
@@ -30,16 +27,27 @@ const ContactUs = () => {
 
           <div>
             <div className="flex items-center space-x-3 mb-2">
-              <div className="bg-red-500 p-2 rounded-full text-white">
-                ✉️
-              </div>
+              <div className="bg-red-500 p-2 rounded-full text-white">✉️</div>
               <h4 className="font-semibold text-lg">Write To Us</h4>
             </div>
-            <p className="text-gray-700">Fill out our form and we will contact you within 24 hours.</p>
+            <p className="text-gray-700">
+              Fill out our form and we will contact you within 24 hours.
+            </p>
             <p className="mt-1 text-sm">
               Emails: <br />
-              <a href="mailto:customer@exclusive.com" className="underline text-blue-600">customer@exclusive.com</a><br />
-              <a href="mailto:support@exclusive.com" className="underline text-blue-600">support@exclusive.com</a>
+              <a
+                href="mailto:customer@exclusive.com"
+                className="underline text-blue-600"
+              >
+                customer@exclusive.com
+              </a>
+              <br />
+              <a
+                href="mailto:support@exclusive.com"
+                className="underline text-blue-600"
+              >
+                support@exclusive.com
+              </a>
             </p>
           </div>
         </div>
@@ -84,7 +92,7 @@ const ContactUs = () => {
         </div>
       </div>
     </div>
->>>>>>> origin/joy-branch
+  );
 };
 
 export default ContactUs;
