@@ -93,6 +93,25 @@ const AboutUs = () => {
                   <i className="fab fa-linkedin-in" />
                 </a>
               </div>
+
+              {/* Service Icons Section */}
+          <div className="grid md:grid-cols-3 gap-8 text-center mt-20">
+            <div>
+              <div className="mx-auto mb-4 w-14 h-14 flex items-center justify-center bg-gray-100 rounded-full">
+                <FiTruck className="text-2xl text-black" />
+              </div>
+              <h4 className="font-semibold text-lg">FREE AND FAST DELIVERY</h4>
+              <p className="text-gray-600">Free delivery for all orders over $140</p>
+            </div>
+
+            <div>
+              <div className="mx-auto mb-4 w-14 h-14 flex items-center justify-center bg-gray-100 rounded-full">
+                <FiHeadphones className="text-2xl text-black" />
+              </div>
+              <h4 className="font-semibold text-lg">24/7 CUSTOMER SERVICE</h4>
+              <p className="text-gray-600">Friendly 24/7 customer support</p>
+            </div>
+            
             </div>
           ))}
         </div>
