@@ -4,5 +4,8 @@ export const useProductStore = create((set) => ({
   products: [],
   setProducts: (products) => set({ products }),
   getOneProducts: () => {},
+  getFiveProducts: async (products) => {
+    set({ products });
+  },
   getForYouProducts: () => {},
 }));

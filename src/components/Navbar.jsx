@@ -12,10 +12,11 @@ import { IoMdClose } from "react-icons/io";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import CartSidebar from "./CartSidebar";
+import useCartStore from "../store/CartStore";
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [showCartSidebar, setShowCartSidebar] = useState(false);
-
+  const { cart } = useCartStore();
   return (
     <motion.div className="sticky top-0 z-50 bg-white text-black">
       {/* Top Strip */}
@@ -38,10 +39,10 @@ const Navbar = () => {
       {/* Main Navbar */}
       <div className="w-full px-5 py-4 border-b border-stone-300 flex items-center justify-between">
         {/* Logo */}
-        <div className="flex items-center gap-2">
+        <Link to={"/"} className="flex items-center gap-2">
           <GiShop className="text-3xl text-blue-700" />
           <div className="text-xl font-bold">ShopEase</div>
-        </div>
+        </Link>
 
         {/* Desktop Nav */}
         <ul className="hidden md:flex gap-6 text-lg font-medium">
@@ -53,20 +54,13 @@ const Navbar = () => {
 
         {/* Search + Cart */}
         <div className="hidden md:flex items-center gap-4">
-          <div className="flex">
-            <input
-              type="text"
-              placeholder="what are you looking for?"
-              className="w-64 h-10 px-4 text-black rounded-md outline-none bg-[#eee] "
-            />
-          </div>
           <div
             className="relative cursor-pointer"
             onClick={() => setShowCartSidebar(true)}
           >
             <CiShoppingCart className="text-3xl text-black" />
             <span className="absolute -top-1 -right-2 bg-red-500 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
-              0
+              {cart.length}
             </span>
           </div>
         </div>

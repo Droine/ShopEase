@@ -1,48 +1,35 @@
-import React, { useState } from "react";
-import { IoClose } from "react-icons/io5";
+import React from "react";
 import { FiTrash2 } from "react-icons/fi";
+import useCartStore from "../store/CartStore";
 
 const CartSidebar = () => {
-  const [cartItems, setCartItems] = useState([
-    {
-      id: 1,
-      name: "Wireless Headphones",
-      image: "/images/headphones.jpg",
-      price: 79.99,
-      quantity: 2,
-    },
-    {
-      id: 2,
-      name: "Smart Watch",
-      image: "/images/watch.jpg",
-      price: 120.0,
-      quantity: 1,
-    },
-  ]);
+  const { cart } = useCartStore();
 
   const handleIncrease = (id) => {
-    setCartItems((prev) =>
-      prev.map((item) =>
+    useCartStore.setState((state) => ({
+      cart: state.cart.map((item) =>
         item.id === id ? { ...item, quantity: item.quantity + 1 } : item
-      )
-    );
+      ),
+    }));
   };
 
   const handleDecrease = (id) => {
-    setCartItems((prev) =>
-      prev.map((item) =>
+    useCartStore.setState((state) => ({
+      cart: state.cart.map((item) =>
         item.id === id && item.quantity > 1
           ? { ...item, quantity: item.quantity - 1 }
           : item
-      )
-    );
+      ),
+    }));
   };
 
   const handleRemove = (id) => {
-    setCartItems((prev) => prev.filter((item) => item.id !== id));
+    useCartStore.setState((state) => ({
+      cart: state.cart.filter((item) => item.id !== id),
+    }));
   };
 
-  const subtotal = cartItems.reduce(
+  const subtotal = cart.reduce(
     (acc, item) => acc + item.price * item.quantity,
     0
   );
@@ -56,13 +43,13 @@ const CartSidebar = () => {
 
       {/* Cart Items */}
       <div className="flex-1 overflow-y-auto space-y-6 pr-1">
-        {cartItems.length === 0 ? (
+        {cart.length === 0 ? (
           <div className="text-center mt-20 text-gray-500">
             <p className="text-2xl">🛒</p>
             <p>Your cart is empty</p>
           </div>
         ) : (
-          cartItems.map((item) => (
+          cart.map((item) => (
             <div
               key={item.id}
               className="flex gap-4 items-center border-b pb-4"
@@ -105,7 +92,7 @@ const CartSidebar = () => {
       </div>
 
       {/* Subtotal + Checkout */}
-      {cartItems.length > 0 && (
+      {cart.length > 0 && (
         <div className="border-t pt-4 mt-4">
           <div className="flex justify-between font-semibold text-lg">
             <span>Subtotal:</span>
