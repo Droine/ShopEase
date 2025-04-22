@@ -1,123 +1,84 @@
 import React from "react";
+import { Button } from "@/components/ui/button";
 
 const AboutUs = () => {
   return (
-    <div className="px-4 md:px-20 py-10 text-[#000] bg-white">
-      {/* Breadcrumb */}
-      <p className="text-sm text-gray-500 mb-4">Home / About</p>
+    <div className="p-8 max-w-6xl mx-auto space-y-8">
+      <div className="text-sm text-gray-500">Home / <span className="text-black">Cart</span></div>
 
-      {/* Our Story Section */}
-      <div className="grid md:grid-cols-2 gap-8 items-center">
-        <div>
-          <h2 className="text-3xl font-bold mb-4">Our Story</h2>
-          <p className="text-gray-700 mb-4">
-            Launched in 2015, Exclusive is South Asia’s premier online shopping
-            marketplace with an active presence in Bangladesh. Supported by wide
-            range of tailored marketing, data and service solutions, Exclusive
-            has 10,500 sellers and 300 brands and serves 3 million customers
-            across the region.
-          </p>
-          <p className="text-gray-700">
-            Exclusive has more than 1 Million products to offer, growing at a
-            very fast rate. Exclusive offers a diverse assortment in categories
-            ranging from consumer.
-          </p>
+      <div className="border rounded-md overflow-hidden">
+        <div className="grid grid-cols-4 bg-gray-100 text-sm font-medium p-4">
+          <div>Product</div>
+          <div>Price</div>
+          <div>Quantity</div>
+          <div>Subtotal</div>
         </div>
-        <div>
-          <img
-            src={
-              "https://images.pexels.com/photos/31631127/pexels-photo-31631127/free-photo-of-graceful-woman-in-desert-wearing-traditional-attire.jpeg?auto=compress&cs=tinysrgb&w=600"
-            }
-            alt="About"
-            className="rounded-xl w-full object-cover"
+
+        <div className="divide-y">
+          {/* Item 1 */}
+          <div className="grid grid-cols-4 items-center p-4">
+            <div className="flex items-center gap-4">
+              <img src="/images/lcd-monitor.png" alt="LCD Monitor" className="w-16 h-16 object-cover" />
+              <span>LCD Monitor</span>
+            </div>
+            <div>$650</div>
+            <div>
+              <select className="border rounded px-2 py-1">
+                <option>01</option>
+              </select>
+            </div>
+            <div>$650</div>
+          </div>
+
+          {/* Item 2 */}
+          <div className="grid grid-cols-4 items-center p-4">
+            <div className="flex items-center gap-4">
+              <img src="/images/gamepad.png" alt="Gamepad" className="w-16 h-16 object-cover" />
+              <span>H1 Gamepad</span>
+            </div>
+            <div>$550</div>
+            <div>
+              <select className="border rounded px-2 py-1">
+                <option>01</option>
+                <option selected>02</option>
+              </select>
+            </div>
+            <div>$1100</div>
+          </div>
+        </div>
+      </div>
+
+      <div className="flex flex-col md:flex-row justify-between gap-6">
+        <div className="flex gap-4">
+          <Button variant="outline">Return To Shop</Button>
+        </div>
+
+        <div className="flex gap-2">
+          <input
+            type="text"
+            placeholder="Coupon Code"
+            className="border px-4 py-2 rounded w-48"
           />
+          <Button className="bg-red-500 hover:bg-red-600 text-white">Apply Coupon</Button>
         </div>
       </div>
 
-      {/* Stats Section */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 text-center">
-        <div className="border p-6 rounded">
-          <div className="text-2xl font-bold mb-2">10.5k</div>
-          <p className="text-gray-600">Sellers active on our site</p>
+      <div className="border p-6 rounded-md w-full md:max-w-md ml-auto space-y-4">
+        <h3 className="text-lg font-semibold">Cart Total</h3>
+        <div className="flex justify-between">
+          <span>Subtotal:</span>
+          <span>$1750</span>
         </div>
-        <div className="border p-6 rounded bg-red-500 text-white">
-          <div className="text-2xl font-bold mb-2">33k</div>
-          <p>Monthly Product Sale</p>
+        <div className="flex justify-between">
+          <span>Shipping:</span>
+          <span>Free</span>
         </div>
-        <div className="border p-6 rounded">
-          <div className="text-2xl font-bold mb-2">45.5k</div>
-          <p className="text-gray-600">Customers active on our site</p>
+        <div className="flex justify-between font-semibold">
+          <span>Total:</span>
+          <span>$1750</span>
         </div>
-        <div className="border p-6 rounded">
-          <div className="text-2xl font-bold mb-2">25k</div>
-          <p className="text-gray-600">Annual gross sale on our site</p>
-        </div>
-      </div>
-
-      {/* Team Section */}
-      <div className="mt-20">
-        <div className="grid md:grid-cols-3 gap-10">
-          {[
-            {
-              name: "Tom Cruise",
-              title: "Founder & Chairman",
-              img: "https://i.imgur.com/1N5xu1S.png",
-            },
-            {
-              name: "Emma Watson",
-              title: "Managing Director",
-              img: "https://i.imgur.com/ktE8Qh3.png",
-            },
-            {
-              name: "Will Smith",
-              title: "Product Designer",
-              img: "https://i.imgur.com/4vydVkF.png",
-            },
-          ].map((person, idx) => (
-            <div key={idx} className="text-center">
-              <img
-                src={person.img}
-                alt={person.name}
-                className="mx-auto mb-4 rounded-md object-cover h-60 w-60"
-              />
-              <h4 className="font-semibold text-lg">{person.name}</h4>
-              <p className="text-sm text-gray-500">{person.title}</p>
-              <div className="flex justify-center mt-2 space-x-4 text-gray-500">
-                <a href="#">
-                  <i className="fab fa-twitter" />
-                </a>
-                <a href="#">
-                  <i className="fab fa-instagram" />
-                </a>
-                <a href="#">
-                  <i className="fab fa-linkedin-in" />
-                </a>
-              </div>
-
-              {/* Service Icons Section */}
-          <div className="grid md:grid-cols-3 gap-8 text-center mt-20">
-            <div>
-              <div className="mx-auto mb-4 w-14 h-14 flex items-center justify-center bg-gray-100 rounded-full">
-                <FiTruck className="text-2xl text-black" />
-              </div>
-              <h4 className="font-semibold text-lg">FREE AND FAST DELIVERY</h4>
-              <p className="text-gray-600">Free delivery for all orders over $140</p>
-            </div>
-
-            <div>
-              <div className="mx-auto mb-4 w-14 h-14 flex items-center justify-center bg-gray-100 rounded-full">
-                <FiHeadphones className="text-2xl text-black" />
-              </div>
-              <h4 className="font-semibold text-lg">24/7 CUSTOMER SERVICE</h4>
-              <p className="text-gray-600">Friendly 24/7 customer support</p>
-            </div>
-            
-            </div>
-          ))}
-        </div>
+        <Button className="w-full bg-red-500 hover:bg-red-600 text-white">Proceed to checkout</Button>
       </div>
     </div>
   );
-};
-
-export default AboutUs;
+}
