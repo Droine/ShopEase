@@ -15,18 +15,21 @@ const Cart = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="p-8 max-w-6xl mx-auto space-y-8">
+    <div className="lg:p-8 p-2 max-w-6xl mx-auto space-y-8">
       <div className="text-sm text-gray-500">
         Home / <span className="text-black">Cart</span>
       </div>
       <div data-testid="cart-items">
         {cart.map((item) => (
-          <div key={item.id} className="grid grid-cols-5 items-center p-4">
+          <div
+            key={item.id}
+            className="grid grid-cols-5 items-center w-full p-2 lg:p-4"
+          >
             <div className="flex items-center gap-4">
               <img
                 src={item.thumbnail}
                 alt={item.name}
-                className="w-16 h-16 object-cover"
+                className="w-14 h-14 object-cover"
               />
               <span>{item.name}</span>
             </div>
@@ -39,7 +42,9 @@ const Cart = () => {
                 >
                   −
                 </button>
-                <span className="px-3 border-t border-b">{item.quantity}</span>
+                <span className="lg:px-3 px-1 border-t border-b">
+                  {item.quantity}
+                </span>
                 <button
                   className="px-2 py-1 border rounded-r"
                   onClick={() => handleIncrease(item.id)}
@@ -59,7 +64,7 @@ const Cart = () => {
           </div>
         ))}
       </div>
-      <div className="flex flex-col md:flex-row justify-between gap-6">
+      <div className="flex  justify-between gap-6">
         <div className="flex gap-4">
           <Link
             className="px-3 py-2 bg-blue-500 hover:bg-blue-600 rounded-md text-white"

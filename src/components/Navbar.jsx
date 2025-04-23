@@ -42,7 +42,7 @@ const Navbar = () => {
         {/* Logo */}
         <Link
           to={"/"}
-          className="flex items-center gap-2"
+          className="flex items-center gap-0.5"
           data-testid="brand-logo"
         >
           <GiShop className="text-3xl text-blue-700" />
