@@ -2,6 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { useProductStore } from "../store/ProductStore";
 import { useCartStore } from "../store/CartStore";
+import EmptyProduct from "./EmptyProduct";
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -11,7 +12,7 @@ const ProductDetails = () => {
   const product = products.find((p) => p.id === parseInt(id));
 
   if (!product) {
-    return <div>Product not found</div>;
+    return <EmptyProduct />;
   }
 
   return (

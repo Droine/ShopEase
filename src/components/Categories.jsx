@@ -14,7 +14,7 @@ const Categories = () => {
 
       <div className="py-6 my-4">
         {/* Categories List */}
-        <div className="flex flex-col lg:flex-row md:flex-row gap-4">
+        <div className="flex flex-col justify-center items-center lg:flex-row md:flex-row gap-4">
           {categories.map(({ id, image, name, slug }) => (
             <Link to={`/shop/category/${slug}`} key={id} className="flex gap-6">
               <div className="w-56 flex flex-col items-center">

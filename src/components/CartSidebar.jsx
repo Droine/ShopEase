@@ -1,7 +1,7 @@
 import React from "react";
 import { FiTrash2 } from "react-icons/fi";
 import useCartStore from "../store/CartStore";
-import { useNavigate } from "react-router";
+import { Link } from "react-router";
 
 const CartSidebar = ({ setShowCartSidebar }) => {
   const {
@@ -12,11 +12,6 @@ const CartSidebar = ({ setShowCartSidebar }) => {
     clearCart,
     subtotal,
   } = useCartStore();
-
-  const navigate = useNavigate();
-  const goToCartPage = () => {
-    navigate("/cart");
-  };
 
   return (
     <div className="h-full w-full flex flex-col p-4">
@@ -90,12 +85,13 @@ const CartSidebar = ({ setShowCartSidebar }) => {
             <span>Subtotal:</span>
             <span>${subtotal.toFixed(2)}</span>
           </div>
-          <button
-            onClick={() => goToCartPage && setShowCartSidebar(false)}
-            className="mt-4 w-full bg-black text-white py-3 rounded-md hover:bg-gray-800 transition"
+          <Link
+            to={"/cart"}
+            onClick={() => setShowCartSidebar(false)}
+            className="mt-4 w-full bg-black text-white py-3 rounded-md block text-center hover:bg-gray-800 transition"
           >
             View in Cart
-          </button>
+          </Link>
         </div>
       )}
     </div>

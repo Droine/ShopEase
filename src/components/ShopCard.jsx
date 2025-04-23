@@ -25,13 +25,13 @@ const ShopCard = ({ products }) => {
             <h3 className="text-lg font-semibold mb-2">{product.title}</h3>
             <p className="text-gray-600 mb-2">${product.price}</p>
           </Link>
-          <button
-            onClick={() => addToCart(product)}
-            className="w-full bg-red-500 text-white py-2 rounded-md hover:bg-red-600"
-            data-testid="add-to-cart"
-          >
-            Add to Cart
-          </button>
+          <div className="h-12 w-12 bg-blue-100 rounded-full flex items-center justify-center">
+            <CiShoppingCart
+              data-testid="add-to-cart"
+              onClick={() => addToCart(product)}
+              className="lg:text-4xl text-3xl text-blue-500"
+            />
+          </div>
         </div>
       ))}
     </div>

@@ -33,11 +33,15 @@ const ContactUs = () => {
                 <h4 className="font-semibold text-lg">Write To Us</h4>
               </div>
               <p className="text-gray-700">
-                Have questions or feedback? We'll get back to you within 24 hours.
+                Have questions or feedback? We'll get back to you within 24
+                hours.
               </p>
               <p className="mt-1 text-sm">
                 Email: <br />
-                <Link to={"mailto:support@shopease.ng"} className="underline text-blue-600">
+                <Link
+                  to={"mailto:support@shopease.ng"}
+                  className="underline text-blue-600"
+                >
                   support@shopease.ng
                 </Link>
               </p>
@@ -50,13 +54,8 @@ const ContactUs = () => {
                 <div className="bg-red-500 p-2 rounded-full text-white">📍</div>
                 <h4 className="font-semibold text-lg">Visit Us</h4>
               </div>
-              <p className="text-gray-700">
-                ShopEase Headquarters
-              </p>
-              <p className="mt-1">
-                123 E-commerce Street,<br />
-                Lagos, Nigeria
-              </p>
+              <p className="text-gray-700">ShopEase Headquarters</p>
+              <p className="mt-1">ACA, Unec Nigeria</p>
             </div>
           </div>
 

@@ -52,11 +52,19 @@ const CheckOut = () => {
 
         <div className="space-y-4">
           {cart.map((item) => (
-            <div key={item.id} className="flex justify-between">
-              <span>
-                {item.name} x {item.quantity}
-              </span>
-              <span>${(item.price * item.quantity).toFixed(2)}</span>
+            <div key={item.id} className="flex items-center justify-between gap-4">
+              <div className="flex items-center gap-3">
+                <img 
+                  src={item.thumbnail} 
+                  alt={item.name}
+                  className="w-16 h-16 object-cover rounded"
+                />
+                <div>
+                  <p className="font-medium">{item.name}</p>
+                  <p className="text-sm text-gray-600">Quantity: {item.quantity}</p>
+                </div>
+              </div>
+              <span className="font-medium">${(item.price * item.quantity).toFixed(2)}</span>
             </div>
           ))}
         </div>
