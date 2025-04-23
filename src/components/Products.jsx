@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { LuChevronRight } from "react-icons/lu";
 import ProductCard from "../components/ProductCard";
-import { useFetch } from "../hooks/useFetch";
+import { useFetch } from "../hooks/UseFetch.js";
 
 const Products = ({ category }) => {
   const { data } = useFetch(

@@ -5,7 +5,7 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { useFetch } from "../hooks/useFetch";
+import { useFetch } from "../hooks/UseFetch.js";
 
 const Carousel = () => {
   const prevRef = useRef(null);

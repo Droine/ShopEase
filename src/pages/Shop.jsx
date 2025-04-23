@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useProductStore } from "../store/ProductStore";
-import { useFetch } from "../hooks/useFetch.js";
+import { useFetch } from "../hooks/UseFetch.js";
 import Sidebar from "../components/Sidebar";
 import SortingUI from "../components/SortingUI";
 import Pagination from "../components/Pagination";
