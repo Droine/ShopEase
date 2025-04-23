@@ -4,7 +4,7 @@ ShopEase is a modern e-commerce platform built with React, Vite, and Tailwind CS
 
 ## 🌐 Live Demo
 
-Visit the live demo: [ShopEase](https://shopease.vercel.app)
+Visit the live demo: [ShopEase](https://shopease-green.vercel.app)
 
 ## 🚀 Tech Stack
 
