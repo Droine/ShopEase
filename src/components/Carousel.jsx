@@ -59,13 +59,13 @@ const Carousel = () => {
       {/* Custom Nav Buttons */}
       <button
         ref={prevRef}
-        className="absolute top-1/2 left-[-1.5em] transform -translate-y-1/2 bg-[#caeaf5] text-blue-500 p-4 rounded-full z-10 hover:bg-[#d4eaf1]"
+        className="absolute top-1/2 left-1 lg:left-[-1.5em] transform -translate-y-1/2 bg-[#caeaf5] text-blue-500 p-4 rounded-full z-10 hover:bg-[#d4eaf1]"
       >
         <FaChevronLeft />
       </button>
       <button
         ref={nextRef}
-        className="absolute top-1/2 right-[-1.5em] transform -translate-y-1/2 bg-[#caeaf5] text-blue-500 p-4 rounded-full z-10 hover:bg-[#d4eaf1]"
+        className="absolute top-1/2 right-1 lg:right-[-1.5em] transform -translate-y-1/2 bg-[#caeaf5] text-blue-500 p-4 rounded-full z-10 hover:bg-[#d4eaf1]"
       >
         <FaChevronRight />
       </button>

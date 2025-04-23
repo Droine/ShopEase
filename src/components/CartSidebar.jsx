@@ -1,44 +1,36 @@
 import React from "react";
 import { FiTrash2 } from "react-icons/fi";
 import useCartStore from "../store/CartStore";
+import { useNavigate } from "react-router";
 
-const CartSidebar = () => {
-  const { cart } = useCartStore();
+const CartSidebar = ({ setShowCartSidebar }) => {
+  const {
+    cart,
+    handleIncrease,
+    handleDecrease,
+    handleRemove,
+    clearCart,
+    subtotal,
+  } = useCartStore();
 
-  const handleIncrease = (id) => {
-    useCartStore.setState((state) => ({
-      cart: state.cart.map((item) =>
-        item.id === id ? { ...item, quantity: item.quantity + 1 } : item
-      ),
-    }));
+  const navigate = useNavigate();
+  const goToCartPage = () => {
+    navigate("/cart");
   };
-
-  const handleDecrease = (id) => {
-    useCartStore.setState((state) => ({
-      cart: state.cart.map((item) =>
-        item.id === id && item.quantity > 1
-          ? { ...item, quantity: item.quantity - 1 }
-          : item
-      ),
-    }));
-  };
-
-  const handleRemove = (id) => {
-    useCartStore.setState((state) => ({
-      cart: state.cart.filter((item) => item.id !== id),
-    }));
-  };
-
-  const subtotal = cart.reduce(
-    (acc, item) => acc + item.price * item.quantity,
-    0
-  );
 
   return (
     <div className="h-full w-full flex flex-col p-4">
       {/* Header */}
       <div className="flex justify-between items-center border-b pb-4 mb-4">
         <h2 className="text-xl font-bold">Your Cart</h2>
+        {cart.length > 0 && (
+          <button
+            onClick={clearCart}
+            className="text-red-600 text-sm flex items-center gap-1 hover:underline"
+          >
+            <FiTrash2 /> Clear All
+          </button>
+        )}
       </div>
 
       {/* Cart Items */}
@@ -55,7 +47,7 @@ const CartSidebar = () => {
               className="flex gap-4 items-center border-b pb-4"
             >
               <img
-                src={item.image}
+                src={item.thumbnail}
                 alt={item.name}
                 className="w-16 h-16 object-cover rounded"
               />
@@ -98,8 +90,11 @@ const CartSidebar = () => {
             <span>Subtotal:</span>
             <span>${subtotal.toFixed(2)}</span>
           </div>
-          <button className="mt-4 w-full bg-black text-white py-3 rounded-md hover:bg-gray-800 transition">
-            Proceed to Checkout
+          <button
+            onClick={() => goToCartPage && setShowCartSidebar(false)}
+            className="mt-4 w-full bg-black text-white py-3 rounded-md hover:bg-gray-800 transition"
+          >
+            View in Cart
           </button>
         </div>
       )}

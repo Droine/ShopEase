@@ -9,7 +9,7 @@ const ProductCard = ({ data }) => {
   console.log(cart);
 
   return (
-    <div className="flex gap-5">
+    <div className="flex flex-col lg:flex-row md:flex-row  gap-5">
       {data?.products?.map((product) => (
         <div
           key={product.id}

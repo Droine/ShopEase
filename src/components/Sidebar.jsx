@@ -1,50 +1,42 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
-
-const brands = [
-  "beauty",
-  "fragrances",
-  "furniture",
-  "groceries",
-  "home-decoration",
-  "kitchen-accessories",
-  "laptops",
-  "mens-shirts",
-  "mens-shoes",
-  "mens-watches",
-  "mobile-accessories",
-  "motorcycle",
-  "skin-care",
-  "smartphones",
-  "sports-accessories",
-  "sunglasses",
-  "tablets",
-  "tops",
-  "vehicle",
-  "womens-bags",
-  "womens-dresses",
-  "womens-jewellery",
-  "womens-shoes",
-  "womens-watches",
-];
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
+  const categories = [
+    "smartphones",
+    "laptops",
+    "fragrances",
+    "skincare",
+    "groceries",
+    "home-decoration",
+    "furniture",
+    "tops",
+    "womens-dresses",
+    "womens-shoes",
+    "mens-shirts",
+    "mens-shoes",
+    "mens-watches",
+    "womens-watches",
+    "womens-bags",
+    "womens-jewellery",
+    "sunglasses",
+    "automotive",
+    "motorcycle",
+    "lighting"
+  ];
+
   return (
-    <div className="w-full md:w-60 bg-white p-4 border rounded shadow-sm h-fit sticky top-4">
-      <h3 className="text-lg font-semibold mb-3">Brands</h3>
+    <div className="w-64 p-4 bg-white rounded-lg shadow" data-testid="category-filter">
+      <h3 className="text-lg font-semibold mb-4">Categories</h3>
       <ul className="space-y-2">
-        {brands.map((brand) => (
-          <li key={brand}>
-            <NavLink
-              to={`/shop/category/${brand}`}
-              className={({ isActive }) =>
-                isActive
-                  ? "text-blue-500 font-bold"
-                  : "text-gray-700 hover:text-blue-400"
-              }
+        {categories.map((category) => (
+          <li key={category}>
+            <Link
+              to={`/shop/category/${category}`}
+              className="block px-4 py-2 hover:bg-gray-100 rounded"
             >
-              {brand.replace("-", " ")}
-            </NavLink>
+              {category.replace("-", " ")}
+            </Link>
           </li>
         ))}
       </ul>

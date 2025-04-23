@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router";
 
 const ContactUs = () => {
   return (
@@ -19,9 +20,9 @@ const ContactUs = () => {
                 <h4 className="font-semibold text-lg">Call To Us</h4>
               </div>
               <p className="text-gray-700">
-                We are available 24/7, 7 days a week.
+                Our customer support team is available 24/7 to assist you.
               </p>
-              <p className="font-medium mt-1">Phone: +880611122222</p>
+              <p className="font-medium mt-1">Phone: +234 803 702 0923</p>
             </div>
 
             <hr className="border-gray-300" />
@@ -32,23 +33,29 @@ const ContactUs = () => {
                 <h4 className="font-semibold text-lg">Write To Us</h4>
               </div>
               <p className="text-gray-700">
-                Fill out our form and we will contact you within 24 hours.
+                Have questions or feedback? We'll get back to you within 24 hours.
               </p>
               <p className="mt-1 text-sm">
-                Emails: <br />
-                <a
-                  href="mailto:customer@exclusive.com"
-                  className="underline text-blue-600"
-                >
-                  customer@exclusive.com
-                </a>
-                <br />
-                <a
-                  href="mailto:support@exclusive.com"
-                  className="underline text-blue-600"
-                >
-                  support@exclusive.com
-                </a>
+                Email: <br />
+                <Link to={"mailto:support@shopease.ng"} className="underline text-blue-600">
+                  support@shopease.ng
+                </Link>
+              </p>
+            </div>
+
+            <hr className="border-gray-300" />
+
+            <div>
+              <div className="flex items-center space-x-3 mb-2">
+                <div className="bg-red-500 p-2 rounded-full text-white">📍</div>
+                <h4 className="font-semibold text-lg">Visit Us</h4>
+              </div>
+              <p className="text-gray-700">
+                ShopEase Headquarters
+              </p>
+              <p className="mt-1">
+                123 E-commerce Street,<br />
+                Lagos, Nigeria
               </p>
             </div>
           </div>

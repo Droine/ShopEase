@@ -51,7 +51,7 @@ const Shop = () => {
 
   return (
     <div className="flex flex-col md:flex-row gap-6 p-4">
-      <Sidebar />
+      <Sidebar data-testid="category-filter" />
       <div className="flex-1">
         <h2 className="text-xl font-bold mb-4">
           {category
@@ -68,7 +68,9 @@ const Shop = () => {
         {error && <p>Something went wrong!</p>}
 
         {/* Product Grid */}
-        <ShopCard products={paginated} />
+        <div data-testid="product-grid">
+          <ShopCard products={paginated} />
+        </div>
 
         {/* Pagination */}
         <Pagination page={page} totalPages={totalPages} setPage={setPage} />

@@ -9,45 +9,29 @@ const ShopCard = ({ products }) => {
   const { addToCart } = useCartStore();
 
   return (
-    <div className="flex flex-wrap gap-5 justify-center">
+    <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
       {products.map((product) => (
         <div
           key={product.id}
-          className="w-72 min-h-[20rem] max-h-96 bg-white/20 rounded-md shadow-lg hover:border border-blue-400 relative"
+          className="bg-white rounded-lg shadow-md p-4"
+          data-testid="product-card"
         >
-          {/* Discount UI */}
-          <div className="absolute w-12 h-14 right-0 rounded-tr-md rounded-bl-3xl bg-blue-700 flex items-center justify-center">
-            <span className="text-white text-sm font-medium w-8 text-start uppercase leading-4">
-              {Math.floor(product.discountPercentage) || 10}% off
-            </span>
-          </div>
-
-          {/* Image */}
-          <Link to={`/product/${product.id}`} className="w-full h-48">
-            <div className="bg-black/10 h-[15rem] rounded-t-md">
-              <img
-                className="cardImage bg-center object-cover w-full h-full"
-                src={product.thumbnail}
-                alt={product.title}
-              />
-            </div>
+          <Link to={`/product/${product.id}`}>
+            <img
+              src={product.thumbnail}
+              alt={product.title}
+              className="w-full h-48 object-cover rounded-md mb-4"
+            />
+            <h3 className="text-lg font-semibold mb-2">{product.title}</h3>
+            <p className="text-gray-600 mb-2">${product.price}</p>
           </Link>
-
-          {/* Product info + cart icon */}
-          <div className="flex justify-between items-center px-3">
-            <div className="py-3 px-2">
-              <dl>
-                <dt>{product.title}</dt>
-                <dt>${product.price}</dt>
-              </dl>
-            </div>
-            <div className="h-12 w-12 bg-blue-100 rounded-full flex items-center justify-center">
-              <CiShoppingCart
-                onClick={() => addToCart(product)}
-                className="text-4xl text-blue-500 cursor-pointer"
-              />
-            </div>
-          </div>
+          <button
+            onClick={() => addToCart(product)}
+            className="w-full bg-red-500 text-white py-2 rounded-md hover:bg-red-600"
+            data-testid="add-to-cart"
+          >
+            Add to Cart
+          </button>
         </div>
       ))}
     </div>
