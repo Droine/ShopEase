@@ -4,7 +4,6 @@ Welcome to the official repository of ShopEase, a modern e-commerce platform bui
 
 ## Table of Contents
 
-<<<<<<< HEAD
 - [Introduction](#introduction)
 - [Project Structure](#project-structure)
 - [Installation](#installation)
@@ -12,11 +11,9 @@ Welcome to the official repository of ShopEase, a modern e-commerce platform bui
 - [Components](#components)
 - [Assets](#assets)
 - [Dependencies](#dependencies)
+- [Data Structures and Algorithms](#data-structures-and-algorithms)
 - [Contributing](#contributing)
 - [Progress](#progress)
-=======
-Visit the live demo: [ShopEase](https://shopease-green.vercel.app)
->>>>>>> c9acfab68750afa7f13f543defcf0cb058719a21
 
 ## Introduction
 
@@ -30,9 +27,10 @@ The project's file structure is organized as follows:
 shopease/
 ├── public/
 │   ├── index.html
+│   └── favicon.ico
 ├── src/
-│   ├── api/           # API integration
-│   ├── assets/        # Static assets(images)
+│   ├── api/           # API integration and services
+│   ├── assets/        # Static assets (images, fonts, etc.)
 │   ├── components/    # Reusable UI components
 │   │   ├── Navbar.jsx
 │   │   ├── Footer.jsx
@@ -47,10 +45,10 @@ shopease/
 │   │   ├── Cart.jsx
 │   │   ├── AboutUs.jsx
 │   │   └── ContactUs.jsx
-│   ├── store/         # Zustand store
-│   ├── Utils/         # Utility functions
-│   ├── App.jsx        # Main application
-│   ├── main.jsx       # Application entry
+│   ├── store/         # Zustand store configuration
+│   ├── Utils/         # Utility functions and helpers
+│   ├── App.jsx        # Main application component
+│   ├── main.jsx       # Application entry point
 │   └── index.css      # Global styles
 ├── cypress/           # Cypress testing files
 ├── .gitignore
@@ -150,6 +148,19 @@ The project uses the following major dependencies:
 
 For a complete list of dependencies, refer to the `package.json` file.
 
+## Data Structures and Algorithms
+
+This project implements various data structures and algorithms to ensure efficient functionality:
+
+### Data Structures
+
+- Arrays: Used for product lists, pagination, and cart management
+- Objects: Used for product data and state management
+
+### Algorithms
+
+- Sorting Algorithms: For product organization and filtering
+
 ## Contributing
 
 We welcome contributions from the community. To contribute, follow these steps:
@@ -181,6 +192,12 @@ We welcome contributions from the community. To contribute, follow these steps:
 - State management with Zustand
 - API integration with React Query
 - Testing setup with Cypress
+
+### In Progress
+
+- Performance optimizations
+- Additional feature implementations
+- UI/UX refinements
 
 ## Live Demo
 
