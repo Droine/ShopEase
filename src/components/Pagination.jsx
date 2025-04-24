@@ -8,7 +8,7 @@ const Pagination = ({ totalPages, page, setPage }) => {
           key={p}
           onClick={() => setPage(p)}
           className={`px-3 py-1 border rounded ${
-            page === p ? "bg-blue-500 text-white" : "bg-white text-gray-700"
+            page === p ? "bg-blue-700 text-white" : "bg-white text-blue-900"
           }`}
         >
           {p}

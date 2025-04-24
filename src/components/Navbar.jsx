@@ -22,7 +22,7 @@ const Navbar = () => {
   return (
     <nav className="sticky top-0 z-50 bg-white text-black" data-testid="navbar">
       {/* Top Strip */}
-      <div className="w-full h-10 px-5 flex items-center justify-between text-sm text-white bg-black">
+      <div className="w-full h-10 px-5 flex items-center justify-between text-sm text-white bg-blue-900">
         <div>Welcome to greater ShopEase!</div>
         <div className="hidden md:flex items-center gap-6">
           <span className="flex items-center gap-1">
@@ -38,7 +38,7 @@ const Navbar = () => {
       </div>
 
       {/* Main Navbar */}
-      <div className="w-full px-5 py-4 border-b border-stone-300 flex items-center justify-between">
+      <div className="w-full px-5 py-4 border-b border-blue-200 flex items-center justify-between">
         {/* Logo */}
         <Link
           to={"/"}
@@ -46,7 +46,7 @@ const Navbar = () => {
           data-testid="brand-logo"
         >
           <GiShop className="text-3xl text-blue-700" />
-          <div className="text-xl font-bold">ShopEase</div>
+          <div className="text-xl font-bold text-blue-900">ShopEase</div>
         </Link>
 
         {/* Desktop Nav */}
@@ -110,7 +110,7 @@ const Navbar = () => {
             animate={{ x: 0, opacity: 1 }}
             exit={{ x: "-100%", opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed top-0 left-0 z-50 w-3/4 h-full bg-black text-white p-6 md:hidden"
+            className="fixed top-0 left-0 z-50 w-3/4 h-full bg-blue-900 text-white p-6 md:hidden"
             data-testid="mobile-nav"
           >
             <div className="flex flex-col gap-6">
