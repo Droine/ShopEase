@@ -4,6 +4,7 @@ Welcome to the official repository of ShopEase, a modern e-commerce platform bui
 
 ## Table of Contents
 
+<<<<<<< HEAD
 - [Introduction](#introduction)
 - [Project Structure](#project-structure)
 - [Installation](#installation)
@@ -13,6 +14,9 @@ Welcome to the official repository of ShopEase, a modern e-commerce platform bui
 - [Dependencies](#dependencies)
 - [Contributing](#contributing)
 - [Progress](#progress)
+=======
+Visit the live demo: [ShopEase](https://shopease-green.vercel.app)
+>>>>>>> c9acfab68750afa7f13f543defcf0cb058719a21
 
 ## Introduction
 
