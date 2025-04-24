@@ -9,9 +9,11 @@ const ProductDetails = () => {
   const products = useProductStore((state) => state.products);
   const { addToCart } = useCartStore();
 
-  const product = products.find((p) => p.id === parseInt(id));
+  // Convert id to number and handle potential NaN
+  const productId = parseInt(id);
+  const product = products.find((p) => p.id === productId);
 
-  if (!product) {
+  if (!product || isNaN(productId)) {
     return <EmptyProduct />;
   }
 
@@ -26,25 +28,31 @@ const ProductDetails = () => {
           />
         </div>
         <div>
-          <h1 className="text-3xl font-bold mb-4">{product.title}</h1>
-          <p className="text-gray-600 mb-4">{product.description}</p>
+          <h1 className="text-3xl font-bold mb-4 text-blue-900">
+            {product.title}
+          </h1>
+          <p className="text-blue-700 mb-4">{product.description}</p>
           <div className="flex items-center gap-4 mb-4">
-            <span className="text-2xl font-bold">${product.price}</span>
+            <span className="text-2xl font-bold text-blue-900">
+              ${product.price}
+            </span>
             {product.discountPercentage && (
-              <span className="text-red-500">
+              <span className="text-blue-600">
                 {Math.round(product.discountPercentage)}% off
               </span>
             )}
           </div>
           <div className="mb-4">
-            <span className="font-semibold">Rating:</span> {product.rating}/5
+            <span className="font-semibold text-blue-900">Rating:</span>{" "}
+            <span className="text-blue-700">{product.rating}/5</span>
           </div>
           <div className="mb-4">
-            <span className="font-semibold">Stock:</span> {product.stock} units
+            <span className="font-semibold text-blue-900">Stock:</span>{" "}
+            <span className="text-blue-700">{product.stock} units</span>
           </div>
           <button
             onClick={() => addToCart(product)}
-            className="w-full bg-red-500 text-white py-3 rounded-md hover:bg-red-600"
+            className="w-full bg-blue-700 text-white py-3 rounded-md hover:bg-blue-800 transition-colors"
             data-testid="add-to-cart"
           >
             Add to Cart

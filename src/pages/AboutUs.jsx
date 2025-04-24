@@ -66,7 +66,7 @@ const AboutUs = () => {
         <h2 className="text-3xl font-bold mb-8 text-center">
           Our Leadership Team
         </h2>
-        <div className="grid md:grid-cols-3 gap-10">
+        <div className="grid md:grid-cols-2 gap-10">
           {founders.map((person, idx) => (
             <div key={idx} className="text-center" data-testid="team-member">
               <img
